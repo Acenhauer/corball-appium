@@ -44,15 +44,15 @@ public class CalculatorTest extends MobileApp {
         locResult.add(By.id(result[0]));
         locResult.add(By.xpath(result[1]));
         // select the first number
-        WebUtil.click(driver(), locNumber1.get(deviceNum));
+        WebUtil.click(appiumDriver(), locNumber1.get(deviceNum));
         // select the operator
-        WebUtil.click(driver(), locOperAdd.get(deviceNum));
+        WebUtil.click(appiumDriver(), locOperAdd.get(deviceNum));
         // select the second number
-        WebUtil.click(driver(), locNumber5.get(deviceNum));
+        WebUtil.click(appiumDriver(), locNumber5.get(deviceNum));
         // click equals to calculate the result
-        WebUtil.click(driver(), locEquals.get(deviceNum));
+        WebUtil.click(appiumDriver(), locEquals.get(deviceNum));
         // verify the result
-        WebElement resultElement = WebUtil.waitAndGetVisibleElement(driver(), locResult.get(deviceNum));
+        WebElement resultElement = WebUtil.waitAndGetVisibleElement(appiumDriver(), locResult.get(deviceNum));
         assertEquals(6, Integer.parseInt(resultElement.getText()));
     }
 }

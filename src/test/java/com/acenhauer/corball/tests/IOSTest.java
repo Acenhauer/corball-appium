@@ -21,7 +21,7 @@ public class IOSTest extends MobileApp {
     private void populate() {
         values = new ArrayList<Integer>();
         //populate text fields with two random number
-        List<WebElement> elems = driver().findElementsByClassName("UIATextField");
+        List<WebElement> elems = appiumDriver().findElementsByClassName("UIATextField");
         Random random = new Random();
         for (WebElement elem : elems) {
             int rndNum = random.nextInt(MAXIMUM - MINIMUM + 1) + MINIMUM;
@@ -36,10 +36,10 @@ public class IOSTest extends MobileApp {
         // populate text fields with values
         populate();
         // trigger computation by using the button
-        WebElement button = driver().findElementByClassName("UIAButton");
+        WebElement button = appiumDriver().findElementByClassName("UIAButton");
         button.click();
         // is sum equal ?
-        WebElement texts = driver().findElementByClassName("UIAStaticText");
+        WebElement texts = appiumDriver().findElementByClassName("UIAStaticText");
         assertEquals(String.valueOf(values.get(0) + values.get(1)), texts.getText());
     }
 }
